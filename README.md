@@ -1,7 +1,9 @@
 # PowerShell RDP session log script
 Bu PowerShell scripti, Windows işletim sistemi üzerinde çalışan bir bilgisayarda son 7 gün (gün sayısı düzenlenebilir) içinde gerçekleşen uzak masaüstü (Remote Desktop Protocol, RDP) bağlantı olaylarını (logon ve logoff) izlemek için kullanılır. İşte bu script ile ilgili ayrıntılı bir açıklama ve kullanım senaryoları:
 
-`$logs = get-eventlog system -ComputerName powershell-ozan -source Microsoft-Windows-Winlogon -After (Get-Date).AddDays(-7);`
+```
+$logs = get-eventlog system -ComputerName powershell-ozan -source Microsoft-Windows-Winlogon -After (Get-Date).AddDays(-7);
+```
 
 Bu komut, belirtilen bilgisayar (powershell-ozan bu bölümü kendi bilgisayar adınız ile güncelleyeiniz) üzerindeki 'System' event logundan, 'Microsoft-Windows-Winlogon' kaynağına ait, son 7 gün içindeki olayları çeker. Bu, kullanıcıların sisteme giriş yapma ve çıkma (logon ve logoff) olaylarını içerir.
 
